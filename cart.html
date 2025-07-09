@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Cart</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { margin-bottom: 20px; }
+    table { border-collapse: collapse; width: 100%; max-width: 800px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    img { width: 80px; height: 50px; object-fit: cover; }
+    .quantity-controls button { padding: 4px 10px; margin: 0 5px; cursor: pointer; }
+    #total-price { margin-top: 20px; font-weight: bold; font-size: 18px; }
+    a.back-link { display: inline-block; margin-bottom: 15px; text-decoration: none; color: #007bff; }
+    a.back-link:hover { text-decoration: underline; }
+    .cart-footer { margin-top: 30px; }
+    .purchase-btn { padding: 10px 20px; font-size: 16px; background: green; color: white; border: none; border-radius: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link">← Back to Products</a>
+  <h1>Your Cart</h1>
+
+  <table id="cart-table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody><!-- injected items --></tbody>
+  </table>
+
+  <div id="total-price">Total: ৳0</div>
+  <div class="cart-footer">
+    <button class="purchase-btn">🛍️ Purchase Now</button>
+  </div>
+
+  <script>
+    function generateId(item) {
+      return `${item.name}-${item.price}-${item.image}`;
+    }
+
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const tbody = document.querySelector('#cart-table tbody');
+      tbody.innerHTML = '';
+
+      if (!cart.length) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;">Your cart is empty</td></tr>`;
+        document.getElementById('total-price').textContent = 'Total: ৳0';
+        return;
+      }
+
+      let total = 0;
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        const id = generateId(item);
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><img src="${item.image}" alt="${item.name}"></td>
+          <td>${item.name}</td>
+          <td>৳${item.price}</td>
+          <td class="quantity-controls">
+            <button class="decrease" data-id="${id}">-</button>
+            ${item.quantity}
+            <button class="increase" data-id="${id}">+</button>
+          </td>
+          <td>৳${subtotal}</td>
+          <td><button class="remove" data-id="${id}">Remove</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById('total-price').textContent = `Total: ৳${total}`;
+      addListeners();
+    }
+
+    function addListeners() {
+      document.querySelectorAll('.increase').forEach(btn => btn.addEventListener('click', () => {
+        updateQuantity(btn.dataset.id, 1);
+      }));
+      document.querySelectorAll('.decrease').forEach(btn => btn.addEventListener('click', () => {
+        updateQuantity(btn.dataset.id, -1);
+      }));
+      document.querySelectorAll('.remove').forEach(btn => btn.addEventListener('click', () => {
+        removeItem(btn.dataset.id);
+      }));
+    }
+
+    function updateQuantity(id, delta) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const idx = cart.findIndex(i => generateId(i) === id);
+      if (idx === -1) return;
+      cart[idx].quantity += delta;
+      if (cart[idx].quantity <= 0) cart.splice(idx, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+      updateCartCount();
+    }
+
+    function removeItem(id) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const idx = cart.findIndex(i => generateId(i) === id);
+      if (idx !== -1) cart.splice(idx, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+      updateCartCount();
+    }
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const count = cart.reduce((s, i) => s + i.quantity, 0);
+      const badge = document.getElementById('cart-count');
+      if (badge) badge.textContent = count;
+    }
+
+    document.querySelector('.purchase-btn').addEventListener('click', () => {
+      alert('✅ Thank you for purchase. This is a demo!');
+      localStorage.removeItem('cart');
+      loadCart();
+      updateCartCount();
+    });
+
+    loadCart();
+    updateCartCount();
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Furniture Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <nav class="navber section-content">
+      <a href="#" class="nav-logo">
+        <h2 class="logo-text">VELOCITY</h2>
+      </a>
+      <ul class="nav-menu">
+        <button id="menu-close-button" class="fas fa-times"></button>
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#product" class="nav-link">Product</a></li>
+        <li class="nav-item"><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="nav-item">
+            <!-- ✅ Cart List with Icon and Badge -->
+      <a href="cart.html" class="nav-link cart-list-btn">
+        <i class="fa-solid fa-cart-shopping"></i> Cart List
+        <span id="cart-badge" class="cart-badge">0</span>
+      </a>
+    </li>
+  </ul>
+  <button id="menu-open-button" class="fas fa-bars"></button>
+</nav>
+    </header>
+   <main>
+  <section class="hero-section">
+    <div class="section-content">
+      <div class="hero-details">
+        <h2 class="title">Best Furniture</h2>
+        <h3 class="subtitle">Save your money and time</h3>
+        <p class="description">Welcome to our website, where we provide the best furnitures</p>
+        <div class="buttons">
+          <a href="#" class="button order-now">Shop now</a>
+          <a href="#contact" class="button contact-us">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="Image/sofa-logo.png" alt="Hero" class="hero-image">
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="section-content">
+      <div class="about-image-wrapper">
+        <img src="Image/chair-logoo.png" alt="About" class="about-image">
+      </div>
+      <div class="about-details">
+        <h2 class="section-title">About Us</h2>
+        <p class="text">Welcome to VELOCITY, where comfort meets craftsmanship...</p>
+        <div class="social-link-list">
+          <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-section" id="product">
+    <h2 class="section-title">Our Product</h2>
+    <div class="section-content">
+      
+ <ul class="product-list">
+   <li class="product-item" 
+   data-id="Sofa" 
+   data-name="Sofa" 
+   data-price="16000" 
+   data-image="Image/sofaa.png">
+    <img src="Image/sofaa.png" alt="Sofa" class="product-image" />
+    <h3 class="name">Sofa</h3>
+    <p class="text">Price : ৳16000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+  </li>
+
+  <li class="product-item" 
+  data-id="Sofa1" 
+  data-name="Sofa"
+   data-price="15000" 
+   data-image="Image/sofa1.png">
+    <img src="Image/sofa1.png" alt="Sofa" class="product-image" />
+    <h3 class="name">Sofa</h3>
+    <p class="text">Price : ৳15000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+  </li>
+
+  <li class="product-item" 
+  data-id="Table" 
+  data-name="Table" 
+  data-price="10000" 
+  data-image="Image/table1.png">
+    <img src="Image/table1.png" alt="Table" class="product-image" />
+    <h3 class="name">Table</h3>
+    <p class="text">Price : ৳10000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+  </li>
+
+  <li class="product-item" 
+  data-id="Table1" 
+  data-name="Table" 
+  data-price="9000" 
+  data-image="Image/table.png">
+    <img src="Image/table.png" alt="Table" class="product-image" />
+    <h3 class="name">Table</h3>
+    <p class="text">Price : ৳9000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+  </li>
+
+  <li class="product-item" 
+  data-id="Chair" 
+  data-name="Chair" 
+  data-price="7000" 
+  data-image="Image/chair.png">
+    <img src="Image/chair.png" alt="Chair" class="product-image" />
+    <h3 class="name">Chair</h3>
+    <p class="text">Price : ৳7000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+  </li>
+
+  <li class="product-item" 
+  data-id="Chair1" 
+  data-name="Chair" 
+  data-price="8000" 
+  data-image="Image/chair1.png">
+    <img src="Image/chair1.png" alt="Chair" class="product-image" />
+    <h3 class="name">Chair</h3>
+    <p class="text">Price : ৳8000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+  </li>
+
+  <li class="product-item" 
+  data id="DiningSet"  
+  data-name="Dining Set" 
+  data-price="15000" 
+  data-image="Image/diningset.png">
+    <img src="Image/diningset.png" alt="Dining Set" class="product-image" />
+    <h3 class="name">Dining Set</h3>
+    <p class="text">Price : ৳15000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+  
+
+    
+  </li>
+
+  <li class="product-item" 
+  data-name="Dining Set"
+   data id="DiningSet1" 
+   data-price="16000" 
+   data-image="Image/diningset1.png">
+    <img src="Image/diningset1.png" alt="Dining Set" class="product-image" />
+    <h3 class="name">Dining Set</h3>
+    <p class="text">Price : ৳16000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+  </li>
+
+  <li class="product-item" 
+  data-id="Office Table" 
+  data-name="Office Table" 
+  data-price="11000" 
+  data-image="Image/officetable.png">
+    <img src="Image/officetable.png" alt="Office Table" class="product-image" />
+    <h3 class="name">Office Table</h3>
+    <p class="text">Price : ৳11000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+  
+  </li>
+
+  <li class="product-item" 
+  data-id="Bed"
+   data-name="Bed" 
+   data-price="19000" 
+   data-image="Image/bed.png">
+    <img src="Image/bed.png" alt="Bed" class="product-image" />
+    <h3 class="name">Bed</h3>
+    <p class="text">Price : ৳19000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+    
+  </li>
+
+  <li class="product-item" 
+  data-id="Bed1" 
+  data-name="Bed" 
+  data-price="18000" 
+  data-image="Image/bed1.png">
+    <img src="Image/bed1.png" alt="Bed" class="product-image" />
+    <h3 class="name">Bed</h3>
+    <p class="text">Price : ৳18000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+    
+    
+  </li>
+
+  <li class="product-item" 
+  data-id="Bed2" 
+  data-name="Bed" 
+  data-price="17000" 
+  data-image="Image/bed3.png">
+    <img src="Image/bed3.png" alt="Bed" class="product-image" />
+    <h3 class="name">Bed</h3>
+    <p class="text">Price : ৳17000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+    
+    
+  </li>
+
+  <li class="product-item" 
+  data-id="Book Shelf1" 
+  data-name="Book Shelf"
+   data-price="12000" 
+   data-image="Image/shelf1.png">
+    <img src="Image/shelf1.png" alt="Book Shelf" class="product-image" />
+    <h3 class="name">Book Shelf</h3>
+    <p class="text">Price : ৳12000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+  </li>
+
+  <li class="product-item" 
+  data-id="Wardrobe" 
+  data-name="Wardrobe" 
+  data-price="18000" 
+  data-image="Image/wardrop.png">
+    <img src="Image/wardrop.png" alt="Wardrobe" class="product-image" />
+    <h3 class="name">Wardrobe</h3>
+    <p class="text">Price : ৳18000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+
+  </li>
+
+  <li class="product-item" 
+  data-id="Wardrobe1" 
+  data-name="Wardrobe" 
+  data-price="20000" 
+  data-image="Image/wardrop1.png">
+    <img src="Image/wardrop1.png" alt="Wardrobe" class="product-image" />
+    <h3 class="name">Wardrobe</h3>
+    <p class="text">Price : ৳20000</p>
+    <div class="cart-controls"></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+   
+  </li>
+ </ul>
+    </div>
+  </section>
+</main>
+ 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  let cartCount = 0;
+  const cartBadge = document.getElementById("cart-badge");
+
+  document.querySelectorAll(".add-to-cart-btn").forEach(button => {
+    button.addEventListener("click", function () {
+      cartCount++;
+      cartBadge.textContent = cartCount;
+    });
+  });
+});
+</script>
+
+<script>
+document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const product = button.closest('.product-item');
+    const id = product.getAttribute('data-id') || `${Date.now()}-${Math.random()}`; // fallback unique id
+    const name = product.getAttribute('data-name');
+    const price = parseFloat(product.getAttribute('data-price'));
+    const image = product.getAttribute('data-image');
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Check if this exact product (same id) already exists
+    const existingIndex = cart.findIndex(item => item.id === id);
+
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push({ id, name, price, image, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Update cart count if any badge exists
+    const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const badge = document.getElementById('cart-count');
+    if (badge) {
+      badge.textContent = cartCount;
+      badge.style.display = cartCount > 0 ? 'inline-block' : 'none';
+    }
+
+    alert(`${name} added to cart!`);
+  });
+});
+</script>
+
+
+
+
+        <section class="reviews-section" id="reviews">
+        <h2 class="section-title">Reviews</h2>
+        <div class="section-content">
+            <div class="slider-container swiper">
+                <div class="slider-wrapper">
+                    <ul class="reviews-list swiper-wrapper">
+                        <li class="review swiper-slide">
+                            <img src="Image/person1.jpg" alt="user" class="user-image">
+                            <h3 class="name">Tanjil</h3>
+                            <i class="feedback">"Easily found furniture that matched my interior aesthetic, their attention to design details really sets them apart !"</i>
+                        </li>
+                        <li class="review swiper-slide">
+                            <img src="Image/person2.jpg" alt="user" class="user-image">
+                            <h3 class="name">Ahnaf</h3>
+                            <i class="feedback">"So impressed with the quality of the bed, It's exactly as pictured in website and feels very sturdy !"</i>
+                        </li>
+                        <li class="review swiper-slide">
+                            <img src="Image/person3.jpg" alt="user" class="user-image">
+                            <h3 class="name">Rajkumar</h3>
+                            <i class="feedback">"I loved the variety of styles they offer, from modern minimalist to classic wooden pieces !"</i>
+                        </li>
+                        <li class="review swiper-slide">
+                            <img src="Image/person4.jpg" alt="user" class="user-image">
+                            <h3 class="name">Ashiq</h3>
+                            <i class="feedback">"Fully satisfied, I would highly recommend Velocity to anyone looking for stylish and well-made furniture"</i>
+                        </li>
+                        <li class="review swiper-slide">
+                            <img src="Image/person5.jpg" alt="user" class="user-image">
+                            <h3 class="name">Rafeh</h3>
+                            <i class="feedback">"The prices of furnitures are reasonable for the quality you receive, and the customer service is top-notch too !"</i>
+                        </li>
+                        <li class="review swiper-slide">
+                            <img src="Image/person6.jpg" alt="user" class="user-image">
+                            <h3 class="name">Abdullah</h3>
+                            <i class="feedback">"Elegantly crafted and irresistibly cozy, the sofa was love at first sit !"</i>
+                        </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <section class="gallery-section" id="gallery">
+            <h2 class="section-title">Gallery</h2>
+            <div class="section-content">
+                <ul class="gallery-list">
+                    <li class="gallery-item">
+                        <img src="Image/image1.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image2.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image3.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image4.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image5.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image6.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image7.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image8.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image9.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image10.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image11.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image12.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image13.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image14.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image15.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image16.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image17.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="gallery-item">
+                        <img src="Image/image18.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="section-content">
+                <ul class="contact-info-list">
+                    <li class="contact-info">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        <p>x road, y city</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-envelope"></i>
+                        <p>info@furnitureshopwebsite.com</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>0181-XXXXXXX</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Sunday - friday : 9:00 AM - 5.00 PM</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Saturday : Closed</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-solid fa-globe"></i>
+                        <p>www.x.com</p>
+                    </li>
+                </ul>
+             </div>
+           </section>
+
+                <footer class="footer-section">
+            <div class="section-content">
+                <p class="copyright-text">@ Furniture Shop</p>
+                 <div class="social-link-list">
+                        <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                         <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+                 </div>  
+                 
+                 <p class="policy-text">
+                    <a href="#" class="policy-link">Privacy policy</a>
+                    <span class="separator">.</span>
+                    <a href="#" class="policy-link">Refund policy</a>
+                 </p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+   
+</body>
+</html>
+
+
