@@ -1,5 +1,4 @@
 <script>
-  // Navbar menu toggle
   const menuOpenBtn = document.getElementById('menu-open-button');
   const menuCloseBtn = document.getElementById('menu-close-button');
   const navMenu = document.querySelector('.nav-menu');
@@ -15,6 +14,7 @@
     menuOpenBtn.style.display = 'inline';
     menuCloseBtn.style.display = 'none';
   });
+
 
   // 🛒 Cart badge update
   function updateCartCount() {
@@ -118,7 +118,7 @@
 
     if (cartItems.length === 0) {
       container.innerHTML = "<p style='padding: 40px; font-size: 18px;'>Your cart is empty.</p>";
-    } else {
+    } else 
       cartItems.forEach(item => {
         const li = document.createElement("li");
         li.className = "product-item";
@@ -152,7 +152,7 @@
         });
       });
     }
-  }
+  
 
   // Initial count update
   updateCartCount();
@@ -180,4 +180,3 @@ if (cartItems.length === 0) {
     container.appendChild(li);
   });
 }
-
